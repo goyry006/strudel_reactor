@@ -13,7 +13,8 @@ import P1RadioControls from "./components/P1RadioControls";
 import TransportControls from "./components/TransportControls";
 import ProcessControls from "./components/ProcessControls";
 import PreprocessorEditor from "./components/PreprocessorEditor";
-
+import CpmControl from "./components/CpmControl"
+import Slider from "./components/Slider"
 
 let globalEditor = null;
 
@@ -137,6 +138,10 @@ export default function StrudelDemo() {
                         </div>
                         <div className="col-md-4">
                             <P1RadioControls />
+                            <br/>
+                            <CpmControl />
+                            <br />
+                            <Slider />
                         </div>
                     </div>
                 </div>
