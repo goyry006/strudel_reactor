@@ -39,11 +39,21 @@ export default function StrudelDemo() {
 
     const [songText, setSongText] = useState(stranger_tune)
     const [p1Radio, setP1Radio] = useState('ON'); // 'ON' | 'HUSH'
+    const [volume, setVolume] = useState(0.70); // 0..1
 
+
+    //const preprocess = useCallback(
+    //    (text) => text.replaceAll('<p1_Radio>', p1Radio === 'ON' ? '' : '_'),
+    //    [p1Radio]
+    //);
     const preprocess = useCallback(
-        (text) => text.replaceAll('<p1_Radio>', p1Radio === 'ON' ? '' : '_'),
-        [p1Radio]
+        (text) =>
+            text
+                .replaceAll('<p1_Radio>', p1Radio === 'ON' ? '' : '_')
+                .replaceAll('<volume>', String(Number(volume).toFixed(2))),
+        [p1Radio, volume]
     );
+
 
     const handleProcess = () => {
         const processed = preprocess(songText);
@@ -88,11 +98,11 @@ export default function StrudelDemo() {
                 },
             });
 
-            document.getElementById('proc').value = stranger_tune
+           // document.getElementById('proc').value = stranger_tune
         }
         globalEditor.setCode(preprocess(songText));
 
-    }, []);
+    }, []); // eslint-disable-next-line react-hooks/exhaustive-deps
 
     useEffect(() => {
         if (globalEditor) {
@@ -140,7 +150,9 @@ export default function StrudelDemo() {
                             <br />
                             {/*<CpmControl />*/}
                             {/*<br />*/}
-                            {/*<Slider />*/}
+
+                            <Slider id="volrange" label="Volume" value={volume} onChange={setVolume} />
+
                             {/*<br />*/}
                             {/*<FormChecks />*/}
                         </div>
