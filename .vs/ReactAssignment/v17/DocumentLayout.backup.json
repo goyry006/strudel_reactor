@@ -54,7 +54,8 @@
               "RelativeToolTip": "src\\components\\TransportControls.jsx",
               "ViewState": "AgIAAAAAAAAAAAAAAAAuwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
-              "WhenOpened": "2025-11-02T08:44:22.456Z"
+              "WhenOpened": "2025-11-02T08:44:22.456Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -66,7 +67,8 @@
               "RelativeToolTip": "src\\components\\Slider.jsx",
               "ViewState": "AgIAAAAAAAAAAAAAAAAuwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
-              "WhenOpened": "2025-11-02T08:44:12.692Z"
+              "WhenOpened": "2025-11-02T08:44:12.692Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -78,7 +80,8 @@
               "RelativeToolTip": "src\\components\\ProcessControls.jsx",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
-              "WhenOpened": "2025-11-02T08:44:11.77Z"
+              "WhenOpened": "2025-11-02T08:44:11.77Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -90,7 +93,8 @@
               "RelativeToolTip": "src\\components\\PreprocessorEditor.jsx",
               "ViewState": "AgIAAAAAAAAAAAAAAAAuwAgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
-              "WhenOpened": "2025-11-02T08:44:10.473Z"
+              "WhenOpened": "2025-11-02T08:44:10.473Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -102,7 +106,8 @@
               "RelativeToolTip": "src\\components\\P1RadioControls.jsx",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
-              "WhenOpened": "2025-11-02T08:44:09.565Z"
+              "WhenOpened": "2025-11-02T08:44:09.565Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -114,7 +119,8 @@
               "RelativeToolTip": "src\\components\\FormChecks.jsx",
               "ViewState": "AgIAAAAAAAAAAAAAAAAuwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
-              "WhenOpened": "2025-11-02T08:44:08.483Z"
+              "WhenOpened": "2025-11-02T08:44:08.483Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -126,7 +132,8 @@
               "RelativeToolTip": "src\\components\\CpmControl.jsx",
               "ViewState": "AgIAAAAAAAAAAAAAAAAuwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
-              "WhenOpened": "2025-11-02T08:44:06.64Z"
+              "WhenOpened": "2025-11-02T08:44:06.64Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -138,7 +145,8 @@
               "RelativeToolTip": "src\\App.js",
               "ViewState": "AgIAACAAAAAAAAAAAAAAACsAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2025-11-01T08:30:02.468Z"
+              "WhenOpened": "2025-11-01T08:30:02.468Z",
+              "EditorCaption": ""
             }
           ]
         }

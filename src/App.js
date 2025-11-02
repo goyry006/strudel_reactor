@@ -1,5 +1,5 @@
 ﻿import './App.css';
-import { useEffect, useRef , useState} from "react";
+import { useEffect, useRef, useState, useCallback } from "react";
 import { StrudelMirror } from '@strudel/codemirror';
 import { evalScope } from '@strudel/core';
 import { drawPianoroll } from '@strudel/draw';
@@ -38,6 +38,22 @@ export default function StrudelDemo() {
     })
 
     const [songText, setSongText] = useState(stranger_tune)
+    const [p1Radio, setP1Radio] = useState('ON'); // 'ON' | 'HUSH'
+
+    const preprocess = useCallback(
+        (text) => text.replaceAll('<p1_Radio>', p1Radio === 'ON' ? '' : '_'),
+        [p1Radio]
+    );
+
+    const handleProcess = () => {
+        const processed = preprocess(songText);
+        if (globalEditor) globalEditor.setCode(processed);
+    };
+
+    const handleProcessAndPlay = () => {
+        handleProcess();
+        if (globalEditor) globalEditor.evaluate();
+    };
 
     useEffect(() => {
 
@@ -74,8 +90,24 @@ export default function StrudelDemo() {
 
             document.getElementById('proc').value = stranger_tune
         }
-        globalEditor.setCode(songText);
-    }, [songText]);
+        globalEditor.setCode(preprocess(songText));
+
+    }, []);
+
+    useEffect(() => {
+        if (globalEditor) {
+            globalEditor.setCode(preprocess(songText));
+        }
+    }, [songText, preprocess]);
+
+    useEffect(() => {
+        if (globalEditor) {
+            globalEditor.setCode(preprocess(songText));
+            if (globalEditor.repl?.state?.started) {
+                globalEditor.evaluate();
+            }
+        }
+    }, [p1Radio, preprocess, songText]);
 
 
     return (
@@ -91,7 +123,7 @@ export default function StrudelDemo() {
                         <div className="col-md-4">
 
                             <nav>
-                                <ProcessControls />
+                                <ProcessControls onProcess={handleProcess} onProcessPlay={handleProcessAndPlay} />
                                 <br />
                                 <TransportControls onPlay={handlePlay} onStop={handleStop} />
                             </nav>
@@ -103,8 +135,9 @@ export default function StrudelDemo() {
                             <div id="output" />
                         </div>
                         <div className="col-md-4">
-                            <P1RadioControls />
-                            <br/>
+                            <P1RadioControls value={p1Radio} onChange={setP1Radio} />
+
+                            <br />
                             {/*<CpmControl />*/}
                             {/*<br />*/}
                             {/*<Slider />*/}

@@ -1,14 +1,14 @@
-function ProcessControls() {
+function ProcessControls({ onProcess, onProcessPlay }) {
     return (
-        <>
-            <div className="btn-group" role="group" aria-label="basic mixed styles example">
-
-                <button id="process" className="btn btn-outline-primary">Preprocess</button>
-                <button id="process_play" className="btn btn-outline-primary">Proc & Play</button>
-
-            </div>
-        </>
+        <div className="btn-group" role="group" aria-label="processing">
+            <button id="process" className="btn btn-outline-primary" onClick={onProcess}>
+                Preprocess
+            </button>
+            <button id="process_play" className="btn btn-outline-primary" onClick={onProcessPlay}>
+                Proc & Play
+            </button>
+        </div>
     );
 }
 
-export default ProcessControls;
+export default ProcessControls; 
