@@ -12,6 +12,7 @@ import console_monkey_patch, { getD3Data } from './console-monkey-patch';
 import P1RadioControls from "./components/P1RadioControls";
 import TransportControls from "./components/TransportControls";
 import ProcessControls from "./components/ProcessControls";
+import PreprocessorEditor from "./components/PreprocessorEditor";
 
 
 let globalEditor = null;
@@ -118,8 +119,7 @@ export default function StrudelDemo() {
                 <div className="container-fluid">
                     <div className="row">
                         <div className="col-md-8" style={{ maxHeight: '50vh', overflowY: 'auto' }}>
-                            <label htmlFor="exampleFormControlTextarea1" className="form-label">Text to preprocess:</label>
-                            <textarea className="form-control" rows="15" id="proc" ></textarea>
+                            <PreprocessorEditor />
                         </div>
                         <div className="col-md-4">
 
