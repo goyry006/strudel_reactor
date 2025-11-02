@@ -15,6 +15,8 @@ import ProcessControls from "./components/ProcessControls";
 import PreprocessorEditor from "./components/PreprocessorEditor";
 import CpmControl from "./components/CpmControl"
 import Slider from "./components/Slider"
+import FormChecks from "./components/FormChecks"
+
 
 let globalEditor = null;
 
@@ -70,6 +72,7 @@ export function ProcessText(match, ...args) {
 export default function StrudelDemo() {
 
     const hasRun = useRef(false);
+
 
     useEffect(() => {
 
@@ -139,9 +142,11 @@ export default function StrudelDemo() {
                         <div className="col-md-4">
                             <P1RadioControls />
                             <br/>
-                            <CpmControl />
-                            <br />
-                            <Slider />
+                            {/*<CpmControl />*/}
+                            {/*<br />*/}
+                            {/*<Slider />*/}
+                            {/*<br />*/}
+                            {/*<FormChecks />*/}
                         </div>
                     </div>
                 </div>
