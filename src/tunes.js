@@ -103,9 +103,15 @@
 
 
 
-// "theres no soul here" @by froos
+// "theres no soul here" @by froos //this music starts after few second due to the combination of the beats in the coding //Enjoy the  music
 // @date 23-08-21
 // @version 1.0
+
+//--------this music starts after few second due to the combination of the beats in the coding---------------------------------------
+//--------Enjoy the  music-----------------------------------------------------------------------------------------------------------
+//--------I have made some changes in the original tune to support the P1radio buttons and the colume slider with some tokens--------
+
+
 export const stranger_tune = `
 // ==== harmony ====
 let chords = arrange(
