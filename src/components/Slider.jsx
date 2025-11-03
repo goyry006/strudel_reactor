@@ -1,3 +1,4 @@
+//Functionality for this Part-A of reactAssignment
 function Slider({ id = "volrange", label = "Volume", min = 0, max = 1, step = 0.01, value, onChange }) {
     return (
         <>

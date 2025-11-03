@@ -1,4 +1,5 @@
-function PreprocessorEditor({defaultValue, onChange }) {
+//Boss-component
+function PreprocessorEditor({ defaultValue, onChange }) {
     return (
         <>
             <label htmlFor="exampleFormControlTextarea1" className="form-label">Text to preprocess:</label>
