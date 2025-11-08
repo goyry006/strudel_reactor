@@ -1,10 +1,13 @@
 //implementing this functionality later for Part-B
-function CpmControl() {
+function CpmControl({ value, onChange }) {
     return (
         <>
-            <div class="input-group mb-3">
+            <div className="input-group mb-3">
                 <span className="input-group-text" id="cpmLabel">CPM:</span>
-                <input type="text" className="form-control" placeholder="120" aria-label="Username" aria-describedby="cpmLabel"/>
+                <input type="number" className="form-control" placeholder="120" min={30} max={300} step={1} aria-describedby="cpmLabel" value={value}  onChange={(e) => {
+                        const n = Number(e.target.value);
+                        onChange(Number.isFinite(n) ? Math.max(30, Math.min(300, n)) : 120);
+                    }}/>
             </div>
         </>
     );

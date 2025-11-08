@@ -7,36 +7,28 @@
       "RelativeMoniker": "D:0:0:{1C538C04-AF09-44AC-9272-6DDEAA808F25}|ReactAssignment.esproj|solutionrelative:src\\app.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1C538C04-AF09-44AC-9272-6DDEAA808F25}|ReactAssignment.esproj|d:\\reactassignment\\strudel_reactor\\src\\app.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{1C538C04-AF09-44AC-9272-6DDEAA808F25}|ReactAssignment.esproj|solutionrelative:src\\app.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{1C538C04-AF09-44AC-9272-6DDEAA808F25}|ReactAssignment.esproj|d:\\reactassignment\\strudel_reactor\\src\\components\\slider.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
       "RelativeMoniker": "D:0:0:{1C538C04-AF09-44AC-9272-6DDEAA808F25}|ReactAssignment.esproj|solutionrelative:src\\components\\slider.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1C538C04-AF09-44AC-9272-6DDEAA808F25}|ReactAssignment.esproj|d:\\reactassignment\\strudel_reactor\\src\\components\\cpmcontrol.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{1C538C04-AF09-44AC-9272-6DDEAA808F25}|ReactAssignment.esproj|solutionrelative:src\\components\\cpmcontrol.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1C538C04-AF09-44AC-9272-6DDEAA808F25}|ReactAssignment.esproj|d:\\reactassignment\\strudel_reactor\\src\\components\\transportcontrols.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{1C538C04-AF09-44AC-9272-6DDEAA808F25}|ReactAssignment.esproj|solutionrelative:src\\components\\transportcontrols.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1C538C04-AF09-44AC-9272-6DDEAA808F25}|ReactAssignment.esproj|d:\\reactassignment\\strudel_reactor\\src\\components\\processcontrols.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{1C538C04-AF09-44AC-9272-6DDEAA808F25}|ReactAssignment.esproj|solutionrelative:src\\components\\processcontrols.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1C538C04-AF09-44AC-9272-6DDEAA808F25}|ReactAssignment.esproj|d:\\reactassignment\\strudel_reactor\\src\\components\\preprocessoreditor.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{1C538C04-AF09-44AC-9272-6DDEAA808F25}|ReactAssignment.esproj|solutionrelative:src\\components\\preprocessoreditor.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1C538C04-AF09-44AC-9272-6DDEAA808F25}|ReactAssignment.esproj|d:\\reactassignment\\strudel_reactor\\src\\components\\p1radiocontrols.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
       "RelativeMoniker": "D:0:0:{1C538C04-AF09-44AC-9272-6DDEAA808F25}|ReactAssignment.esproj|solutionrelative:src\\components\\p1radiocontrols.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1C538C04-AF09-44AC-9272-6DDEAA808F25}|ReactAssignment.esproj|d:\\reactassignment\\strudel_reactor\\src\\components\\formchecks.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{1C538C04-AF09-44AC-9272-6DDEAA808F25}|ReactAssignment.esproj|solutionrelative:src\\components\\formchecks.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+      "AbsoluteMoniker": "D:0:0:{1C538C04-AF09-44AC-9272-6DDEAA808F25}|ReactAssignment.esproj|d:\\reactassignment\\strudel_reactor\\src\\tunes.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{1C538C04-AF09-44AC-9272-6DDEAA808F25}|ReactAssignment.esproj|solutionrelative:src\\tunes.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1C538C04-AF09-44AC-9272-6DDEAA808F25}|ReactAssignment.esproj|d:\\reactassignment\\strudel_reactor\\src\\components\\preprocessoreditor.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{1C538C04-AF09-44AC-9272-6DDEAA808F25}|ReactAssignment.esproj|solutionrelative:src\\components\\preprocessoreditor.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1C538C04-AF09-44AC-9272-6DDEAA808F25}|ReactAssignment.esproj|d:\\reactassignment\\strudel_reactor\\src\\components\\processcontrols.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{1C538C04-AF09-44AC-9272-6DDEAA808F25}|ReactAssignment.esproj|solutionrelative:src\\components\\processcontrols.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1C538C04-AF09-44AC-9272-6DDEAA808F25}|ReactAssignment.esproj|d:\\reactassignment\\strudel_reactor\\src\\components\\transportcontrols.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{1C538C04-AF09-44AC-9272-6DDEAA808F25}|ReactAssignment.esproj|solutionrelative:src\\components\\transportcontrols.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     }
   ],
   "DocumentGroupContainers": [
@@ -46,110 +38,19 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "App.css",
-              "DocumentMoniker": "D:\\ReactAssignment\\strudel_reactor\\src\\App.css",
-              "RelativeDocumentMoniker": "src\\App.css",
-              "ToolTip": "D:\\ReactAssignment\\strudel_reactor\\src\\App.css",
-              "RelativeToolTip": "src\\App.css",
-              "ViewState": "AgIAAJEBAAAAAAAAAAAAwLgBAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-11-02T11:21:47.553Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Slider.jsx",
-              "DocumentMoniker": "D:\\ReactAssignment\\strudel_reactor\\src\\components\\Slider.jsx",
-              "RelativeDocumentMoniker": "src\\components\\Slider.jsx",
-              "ToolTip": "D:\\ReactAssignment\\strudel_reactor\\src\\components\\Slider.jsx",
-              "RelativeToolTip": "src\\components\\Slider.jsx",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAWAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
-              "WhenOpened": "2025-11-02T10:43:22.516Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "TransportControls.jsx",
-              "DocumentMoniker": "D:\\ReactAssignment\\strudel_reactor\\src\\components\\TransportControls.jsx",
-              "RelativeDocumentMoniker": "src\\components\\TransportControls.jsx",
-              "ToolTip": "D:\\ReactAssignment\\strudel_reactor\\src\\components\\TransportControls.jsx",
-              "RelativeToolTip": "src\\components\\TransportControls.jsx",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
-              "WhenOpened": "2025-11-02T10:43:25.467Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "ProcessControls.jsx",
-              "DocumentMoniker": "D:\\ReactAssignment\\strudel_reactor\\src\\components\\ProcessControls.jsx",
-              "RelativeDocumentMoniker": "src\\components\\ProcessControls.jsx",
-              "ToolTip": "D:\\ReactAssignment\\strudel_reactor\\src\\components\\ProcessControls.jsx",
-              "RelativeToolTip": "src\\components\\ProcessControls.jsx",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
-              "WhenOpened": "2025-11-02T10:43:21.433Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "PreprocessorEditor.jsx",
-              "DocumentMoniker": "D:\\ReactAssignment\\strudel_reactor\\src\\components\\PreprocessorEditor.jsx",
-              "RelativeDocumentMoniker": "src\\components\\PreprocessorEditor.jsx",
-              "ToolTip": "D:\\ReactAssignment\\strudel_reactor\\src\\components\\PreprocessorEditor.jsx",
-              "RelativeToolTip": "src\\components\\PreprocessorEditor.jsx",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
-              "WhenOpened": "2025-11-02T10:43:20.606Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "P1RadioControls.jsx",
-              "DocumentMoniker": "D:\\ReactAssignment\\strudel_reactor\\src\\components\\P1RadioControls.jsx",
-              "RelativeDocumentMoniker": "src\\components\\P1RadioControls.jsx",
-              "ToolTip": "D:\\ReactAssignment\\strudel_reactor\\src\\components\\P1RadioControls.jsx",
-              "RelativeToolTip": "src\\components\\P1RadioControls.jsx",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
-              "WhenOpened": "2025-11-02T10:43:19.927Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "FormChecks.jsx",
-              "DocumentMoniker": "D:\\ReactAssignment\\strudel_reactor\\src\\components\\FormChecks.jsx",
-              "RelativeDocumentMoniker": "src\\components\\FormChecks.jsx",
-              "ToolTip": "D:\\ReactAssignment\\strudel_reactor\\src\\components\\FormChecks.jsx",
-              "RelativeToolTip": "src\\components\\FormChecks.jsx",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
-              "WhenOpened": "2025-11-02T10:43:18.577Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "CpmControl.jsx",
-              "DocumentMoniker": "D:\\ReactAssignment\\strudel_reactor\\src\\components\\CpmControl.jsx",
-              "RelativeDocumentMoniker": "src\\components\\CpmControl.jsx",
-              "ToolTip": "D:\\ReactAssignment\\strudel_reactor\\src\\components\\CpmControl.jsx",
-              "RelativeToolTip": "src\\components\\CpmControl.jsx",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
-              "WhenOpened": "2025-11-02T10:43:17.666Z",
+              "Title": "tunes.js",
+              "DocumentMoniker": "D:\\ReactAssignment\\strudel_reactor\\src\\tunes.js",
+              "RelativeDocumentMoniker": "src\\tunes.js",
+              "ToolTip": "D:\\ReactAssignment\\strudel_reactor\\src\\tunes.js",
+              "RelativeToolTip": "src\\tunes.js",
+              "ViewState": "AgIAAGAAAAAAAAAAAAAAAHYAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-11-07T02:42:33.813Z",
               "EditorCaption": ""
             },
             {
@@ -160,9 +61,72 @@
               "RelativeDocumentMoniker": "src\\App.js",
               "ToolTip": "D:\\ReactAssignment\\strudel_reactor\\src\\App.js",
               "RelativeToolTip": "src\\App.js",
-              "ViewState": "AgIAAC4BAAAAAAAAAAAYwEMBAAAVAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2025-11-02T10:43:09.793Z",
+              "WhenOpened": "2025-11-06T14:02:09.088Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "TransportControls.jsx",
+              "DocumentMoniker": "D:\\ReactAssignment\\strudel_reactor\\src\\components\\TransportControls.jsx",
+              "RelativeDocumentMoniker": "src\\components\\TransportControls.jsx",
+              "ToolTip": "D:\\ReactAssignment\\strudel_reactor\\src\\components\\TransportControls.jsx",
+              "RelativeToolTip": "src\\components\\TransportControls.jsx",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
+              "WhenOpened": "2025-11-06T14:02:07.304Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Slider.jsx",
+              "DocumentMoniker": "D:\\ReactAssignment\\strudel_reactor\\src\\components\\Slider.jsx",
+              "RelativeDocumentMoniker": "src\\components\\Slider.jsx",
+              "ToolTip": "D:\\ReactAssignment\\strudel_reactor\\src\\components\\Slider.jsx",
+              "RelativeToolTip": "src\\components\\Slider.jsx",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
+              "WhenOpened": "2025-11-06T14:02:05.005Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ProcessControls.jsx",
+              "DocumentMoniker": "D:\\ReactAssignment\\strudel_reactor\\src\\components\\ProcessControls.jsx",
+              "RelativeDocumentMoniker": "src\\components\\ProcessControls.jsx",
+              "ToolTip": "D:\\ReactAssignment\\strudel_reactor\\src\\components\\ProcessControls.jsx",
+              "RelativeToolTip": "src\\components\\ProcessControls.jsx",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
+              "WhenOpened": "2025-11-06T14:02:03.373Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "PreprocessorEditor.jsx",
+              "DocumentMoniker": "D:\\ReactAssignment\\strudel_reactor\\src\\components\\PreprocessorEditor.jsx",
+              "RelativeDocumentMoniker": "src\\components\\PreprocessorEditor.jsx",
+              "ToolTip": "D:\\ReactAssignment\\strudel_reactor\\src\\components\\PreprocessorEditor.jsx",
+              "RelativeToolTip": "src\\components\\PreprocessorEditor.jsx",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
+              "WhenOpened": "2025-11-06T14:02:01.903Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "P1RadioControls.jsx",
+              "DocumentMoniker": "D:\\ReactAssignment\\strudel_reactor\\src\\components\\P1RadioControls.jsx",
+              "RelativeDocumentMoniker": "src\\components\\P1RadioControls.jsx",
+              "ToolTip": "D:\\ReactAssignment\\strudel_reactor\\src\\components\\P1RadioControls.jsx",
+              "RelativeToolTip": "src\\components\\P1RadioControls.jsx",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
+              "WhenOpened": "2025-11-06T14:01:59.963Z",
               "EditorCaption": ""
             }
           ]
