@@ -27,16 +27,27 @@ export default function StrudelDemo() {
   const [songText, setSongText] = useState(stranger_tune);
   const [p1Radio, setP1Radio] = useState('ON'); // 'ON' | 'HUSH'
   const [volume, setVolume] = useState(0.7);    // 0..1
+  const [cpm, setCpm] = useState(120);
 
   const handlePlay  = () => { globalEditor?.evaluate(); };
   const handleStop  = () => { globalEditor?.stop(); };
 
     const preprocess = useCallback(
 
-        (text) => text
-                .replaceAll('<p1_Radio>', p1Radio === 'ON' ? '' : '_')
-                .replaceAll('<volume>', String(Number(volume).toFixed(2))),
-        [p1Radio, volume]
+        //(text) => text
+        //        .replaceAll('<p1_Radio>', p1Radio === 'ON' ? '' : '_')
+        //        .replaceAll('<volume>', String(Number(volume).toFixed(2))),
+        //[p1Radio, volume]
+
+        (text) => {
+            const cps = (Number(cpm) / 60) || 2; 
+            return text
+                   .replaceAll('<p1_Radio>', p1Radio === 'ON' ? '' : '_')
+                   .replaceAll('<volume>', String(Number(volume).toFixed(2)))
+                   .replaceAll('<tempoLine>', `setcps(${cps.toFixed(3)})`);
+        },
+
+        [p1Radio, volume, cpm]
     );
 
 
@@ -121,7 +132,7 @@ export default function StrudelDemo() {
       globalEditor.setCode(preprocess(songText));
       if (globalEditor.repl?.state?.started) globalEditor.evaluate();
 
-  }, [p1Radio, volume, preprocess, songText]);
+  }, [p1Radio, volume, cpm, preprocess, songText]);
 
   return (
 
