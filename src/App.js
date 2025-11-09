@@ -202,6 +202,17 @@ export default function StrudelDemo() {
 
             </div>
 
+
+            <div className="ms-3" style={{ minWidth: 180 }}> {/* Tempo (CPM) */}
+
+                    <CpmControl value={cpm} onChange={setCpm} />
+
+                    <div className="small text-muted">
+                          CPS: {(cpm / 60).toFixed(3)}
+                    </div>
+
+            </div>
+
           </div>
 
         </div>
