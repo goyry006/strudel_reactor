@@ -46,11 +46,12 @@ export default function StrudelDemo() {
             return text
                    .replaceAll('<p1_Radio>', p1Radio === 'ON' ? '' : '_')
                    .replaceAll('<volume>', String(Number(volume).toFixed(2)))
-                   .replaceAll('<tempoLine>', `setcps(${cps.toFixed(3)})`);
-
+                   .replaceAll('<tempoLine>', `setcps(${cps.toFixed(3)})`)
+                   .replaceAll('<s1>', checks.c1 ? 's "bd sn"' : '')
+                   .replaceAll('<d1>', checks.c2 ? 'd "hh*8"' : '');
         },
 
-        [p1Radio, volume, cpm]
+        [p1Radio, volume, cpm,checks]
     );
 
 
@@ -135,7 +136,7 @@ export default function StrudelDemo() {
       globalEditor.setCode(preprocess(songText));
       if (globalEditor.repl?.state?.started) globalEditor.evaluate();
 
-  }, [p1Radio, volume, cpm, preprocess, songText]);
+  }, [p1Radio, volume, cpm, checks, preprocess, songText]);
 
   return (
 
