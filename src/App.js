@@ -28,6 +28,8 @@ export default function StrudelDemo() {
   const [p1Radio, setP1Radio] = useState('ON'); // 'ON' | 'HUSH'
   const [volume, setVolume] = useState(0.7);    // 0..1
   const [cpm, setCpm] = useState(120);
+  const [checks, setChecks] = useState({ c1: false, c2: false });
+
 
   const handlePlay  = () => { globalEditor?.evaluate(); };
   const handleStop  = () => { globalEditor?.stop(); };
@@ -45,6 +47,7 @@ export default function StrudelDemo() {
                    .replaceAll('<p1_Radio>', p1Radio === 'ON' ? '' : '_')
                    .replaceAll('<volume>', String(Number(volume).toFixed(2)))
                    .replaceAll('<tempoLine>', `setcps(${cps.toFixed(3)})`);
+
         },
 
         [p1Radio, volume, cpm]
@@ -212,6 +215,14 @@ export default function StrudelDemo() {
                     </div>
 
             </div>
+
+
+            <div className="ms-3" style={{ minWidth: 180 }}> {/*Form check*/}
+
+                    <FormChecks checks={checks} onChange={setChecks} />
+
+            </div>
+
 
           </div>
 
