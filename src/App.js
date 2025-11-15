@@ -16,6 +16,7 @@ import PreprocessorEditor from "./components/PreprocessorEditor";
 import CpmControl from "./components/CpmControl"
 import Slider from "./components/Slider"
 import FormChecks from "./components/FormChecks"
+import HotkeyControls from "./components/HotkeyControls";
 
 
 let globalEditor = null;
@@ -318,7 +319,10 @@ export default function StrudelDemo() {
           </div>
         </div>
 
+
       </section>
+
+       <HotkeyControls setChecks={setChecks} setVolume={setVolume} onPlay={handlePlay}  onStop={handleStop} />
 
     </div>
 

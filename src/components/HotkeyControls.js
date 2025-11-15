@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+﻿import { useEffect, useState } from "react";
 
 function HotkeyControls({ setChecks, setVolume, onPlay, onStop }) {
 
@@ -14,11 +14,11 @@ function HotkeyControls({ setChecks, setVolume, onPlay, onStop }) {
             switch (key)
             {
                 case "1":
-                    setChecks({ c1: true, c2: false });
+                    setChecks(prev => ({ ...prev, c1: !prev.c1 }));
                     break;
 
                 case "2":
-                    setChecks({ c1: true, c2: true });
+                    setChecks(prev => ({ ...prev, c2: !prev.c2 }));
                     break;
 
                 case "3":
@@ -53,11 +53,21 @@ function HotkeyControls({ setChecks, setVolume, onPlay, onStop }) {
     }, [setChecks, setVolume, onPlay, onStop]);
 
     return (
-        <div className="text-center text-muted small mt-3">
-            <b>Hotkeys:</b> [1] s1 | [2] s1+d1 | [3] off | [V/B] volume | [P/S] play/stop
-            <br />
-            Last key: <b>{lastKey.toUpperCase()}</b>
+        <div className="hotkey-bar">
+            <div className="hotkey-inner">
+                <span className="hotkey-title">🎧 Hotkeys:</span>
+                <span className="hotkey-list">
+                    [<b>1</b>] s1 &nbsp;|&nbsp; [<b>2</b>] d1 &nbsp;|&nbsp; [<b>3</b>] off &nbsp;|&nbsp;
+                    [<b>V</b>/<b>B</b>] volume &nbsp;|&nbsp; [<b>P</b>/<b>S</b>] play/stop
+                </span>
+                <span className="hotkey-last">
+                    Last key: <b>{lastKey ? lastKey.toUpperCase() : "—"}</b>
+                </span>
+            </div>
         </div>
     );
+
+
+
 }
 export default HotkeyControls;

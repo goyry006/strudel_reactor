@@ -263,3 +263,51 @@ body {
     padding-bottom: .25rem
 }
 
+.hotkey-bar {
+    position: fixed;
+    bottom: 4px; 
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(25, 28, 38, 0.9);
+    border: 1px solid rgba(110, 231, 249, 0.25);
+    border-radius: 10px;
+    padding: 8px 20px 10px;
+    backdrop-filter: blur(12px) saturate(150%);
+    -webkit-backdrop-filter: blur(12px) saturate(150%);
+    box-shadow: 0 0 12px rgba(110, 231, 249, 0.1), 0 -1px 10px rgba(0, 0, 0, 0.6);
+    z-index: 100;
+}
+
+.hotkey-inner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    color: #bdeeff;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 13px;
+    text-shadow: 0 0 6px rgba(110, 231, 249, 0.4);
+}
+
+.hotkey-title {
+    font-weight: 700;
+    color: #6ee7f9;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+}
+
+.hotkey-list {
+    color: #d9faff;
+}
+
+    .hotkey-list b {
+        color: #6ee7f9;
+        font-weight: 700;
+    }
+
+.hotkey-last {
+    color: #7dd3fc;
+    font-style: italic;
+    font-size: 12px;
+    opacity: 0.9;
+}
