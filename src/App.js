@@ -27,7 +27,7 @@ export default function StrudelDemo() {
   const [songText, setSongText] = useState(stranger_tune);
   const [p1Radio, setP1Radio] = useState('ON'); // 'ON' | 'HUSH'
   const [volume, setVolume] = useState(0.7);    // 0..1
-  const [cpm, setCpm] = useState(120);
+  const [cpm, setCpm] = useState(45.5);
   const [checks, setChecks] = useState({ c1: false, c2: false });
 
 

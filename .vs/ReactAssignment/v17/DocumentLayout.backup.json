@@ -7,12 +7,12 @@
       "RelativeMoniker": "D:0:0:{1C538C04-AF09-44AC-9272-6DDEAA808F25}|ReactAssignment.esproj|solutionrelative:src\\app.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1C538C04-AF09-44AC-9272-6DDEAA808F25}|ReactAssignment.esproj|d:\\reactassignment\\strudel_reactor\\src\\components\\cpmcontrol.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{1C538C04-AF09-44AC-9272-6DDEAA808F25}|ReactAssignment.esproj|solutionrelative:src\\components\\cpmcontrol.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{1C538C04-AF09-44AC-9272-6DDEAA808F25}|ReactAssignment.esproj|d:\\reactassignment\\strudel_reactor\\src\\components\\formchecks.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
       "RelativeMoniker": "D:0:0:{1C538C04-AF09-44AC-9272-6DDEAA808F25}|ReactAssignment.esproj|solutionrelative:src\\components\\formchecks.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1C538C04-AF09-44AC-9272-6DDEAA808F25}|ReactAssignment.esproj|d:\\reactassignment\\strudel_reactor\\src\\components\\cpmcontrol.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{1C538C04-AF09-44AC-9272-6DDEAA808F25}|ReactAssignment.esproj|solutionrelative:src\\components\\cpmcontrol.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,19 +26,20 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "FormChecks.jsx",
               "DocumentMoniker": "D:\\ReactAssignment\\strudel_reactor\\src\\components\\FormChecks.jsx",
               "RelativeDocumentMoniker": "src\\components\\FormChecks.jsx",
               "ToolTip": "D:\\ReactAssignment\\strudel_reactor\\src\\components\\FormChecks.jsx",
               "RelativeToolTip": "src\\components\\FormChecks.jsx",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
-              "WhenOpened": "2025-11-07T03:07:48.061Z"
+              "WhenOpened": "2025-11-07T03:07:48.061Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "CpmControl.jsx",
               "DocumentMoniker": "D:\\ReactAssignment\\strudel_reactor\\src\\components\\CpmControl.jsx",
               "RelativeDocumentMoniker": "src\\components\\CpmControl.jsx",
@@ -56,7 +57,7 @@
               "RelativeDocumentMoniker": "src\\App.js",
               "ToolTip": "D:\\ReactAssignment\\strudel_reactor\\src\\App.js",
               "RelativeToolTip": "src\\App.js",
-              "ViewState": "AgIAAMAAAAAAAAAAAAAAAM0AAAAMAAAAAAAAAA==",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAIwDQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
               "WhenOpened": "2025-11-06T14:02:09.088Z",
               "EditorCaption": ""

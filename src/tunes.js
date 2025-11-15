@@ -114,6 +114,7 @@
 
 export const stranger_tune = `
 // ==== harmony ====
+<tempoLine>
 let chords = arrange(
     [16, "<Fm!3 [Fm!3 Em]>/2"],
     [16, "<Fm <Cm C>>/2"],
@@ -121,7 +122,6 @@ let chords = arrange(
     [8, "<Gb>/2"],
 ).chord()
 
-setcpm(91 / 2)
 
 let warble = x => x.add(note(perlin.range(0, .5)))
 
