@@ -181,11 +181,14 @@ let mask3 = maskn(3)
 let mask4 = maskn(4)
 //////////////////////////////
 
-stack(
+let mainStack = stack(
     drums.mask4("<0 0 0 1 x!4 7 x x x 9 x x x x x 0 0 0 0>/2"),
     guitar.mask4("<0 0 0 0 0!4 x x x x x x x x x x x 9 x x x x>/2"),
     piano.mask4("<x x x x x!4 x x x x x x x x x x x x x x x x x x>/2"),
-    bass.mask4("<0 0 x x x!4 x x x x x x x x 0 0 0 1 x x x x x x x x>/2"),
+    bass.mask4("<0 0 x x x!4 x x x x x x x x 0 0 0 1 x x x x x x x x>/2")
 )
-    .add(room(.25)).gain(<volume>)`
+<s1>
+<d1>
+mainStack = mainStack.add(room(.25)).gain(<volume>)
+mainStack`
 

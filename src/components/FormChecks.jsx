@@ -10,6 +10,7 @@ function FormChecks({ checks, onChange }) {
                         s1
                     </label>
             </div>
+
             <div className="form-check">
                 <input className="form-check-input" type="checkbox" value="" id="c2" checked={checks.c2} onChange={(e) =>
                     onChange({ ...checks, c2: e.target.checked })} />
