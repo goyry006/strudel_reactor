@@ -43,12 +43,25 @@ export default function StrudelDemo() {
 
         (text) => {
             const cps = (Number(cpm) / 60) || 2; 
-            return text
-                   .replaceAll('<p1_Radio>', p1Radio === 'ON' ? '' : '_')
-                   .replaceAll('<volume>', String(Number(volume).toFixed(2)))
-                   .replaceAll('<tempoLine>', `setcps(${cps.toFixed(3)})`)
-                   .replaceAll('<s1>', checks.c1 ? 's "bd sn"' : '')
-                   .replaceAll('<d1>', checks.c2 ? 'd "hh*8"' : '');
+            //return text
+            //       .replaceAll('<p1_Radio>', p1Radio === 'ON' ? '' : '_')
+            //       .replaceAll('<volume>', String(Number(volume).toFixed(2)))
+            //       .replaceAll('<tempoLine>', `setcps(${cps.toFixed(3)})`)
+            //       .replaceAll('<s1>', checks.c1 ? 's "bd sn"' : '')
+            //       .replaceAll('<d1>', checks.c2 ? 'd "hh*8"' : '');
+
+            let processed = text
+                .replaceAll('<p1_Radio>', p1Radio === 'ON' ? '' : '_')
+                .replaceAll('<volume>', String(Number(volume).toFixed(2)))
+                .replaceAll('<tempoLine>', `setcps(${cps.toFixed(3)})`);
+
+            // safely inject optional sections after mainStack definition
+            if (checks.c1) processed = processed.replace('<s1>', '\nmainStack = stack(mainStack, s("bd sn"))');
+            else processed = processed.replace('<s1>', '');
+            if (checks.c2) processed = processed.replace('<d1>', '\nmainStack = stack(mainStack, s("hh*8").gain(0.7))');
+            else processed = processed.replace('<d1>', '');
+
+            return processed;
         },
 
         [p1Radio, volume, cpm,checks]
