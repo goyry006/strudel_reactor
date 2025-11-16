@@ -17,7 +17,7 @@ import CpmControl from "./components/CpmControl"
 import Slider from "./components/Slider"
 import FormChecks from "./components/FormChecks"
 import HotkeyControls from "./components/HotkeyControls";
-
+import EffectControls from "./components/EffectControls";
 
 let globalEditor = null;
 
@@ -30,6 +30,7 @@ export default function StrudelDemo() {
   const [volume, setVolume] = useState(0.7);    // 0..1
   const [cpm, setCpm] = useState(45.5);
   const [checks, setChecks] = useState({ c1: false, c2: false });
+  const [effect, setEffect] = useState("reverb");
 
 
   const handlePlay  = () => { globalEditor?.evaluate(); };
