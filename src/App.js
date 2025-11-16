@@ -52,10 +52,24 @@ export default function StrudelDemo() {
             if (checks.c2) processed = processed.replace('<d1>', '\nmainStack = stack(mainStack, s("hh(3,8)").gain(0.7))');
             else processed = processed.replace('<d1>', '');
 
+            switch (effect) {
+                case "reverb":
+                    processed += '\nmainStack = mainStack.room(0.5)';  // subtle echoing space
+                    break;
+                case "echo":
+                    processed += '\nmainStack = mainStack.delay(0.25).gain(0.9)'; // bounce back delay
+                    break;
+                case "distortion":
+                    processed += '\nmainStack = mainStack.distort(0.3)'; // crunchy distortion
+                    break;
+                default:
+                    break;
+            }
+
             return processed;
         },
 
-        [p1Radio, volume, cpm,checks]
+        [p1Radio, volume, cpm, checks, effect]
     );
 
 
@@ -140,7 +154,7 @@ export default function StrudelDemo() {
       globalEditor.setCode(preprocess(songText));
       if (globalEditor.repl?.state?.started) globalEditor.evaluate();
 
-  }, [p1Radio, volume, cpm, checks, preprocess, songText]);
+  }, [p1Radio, volume, cpm, checks, effect, preprocess, songText]);
 
   return (
 
@@ -228,7 +242,7 @@ export default function StrudelDemo() {
 
             </div>
 
-
+             
           </div>
 
         </div>
@@ -323,7 +337,11 @@ export default function StrudelDemo() {
 
       </section>
 
-       <HotkeyControls setChecks={setChecks} setVolume={setVolume} onPlay={handlePlay}  onStop={handleStop} />
+      <div className="effect-bar">
+              <EffectControls effect={effect} setEffect={setEffect} />
+      </div>
+
+      <HotkeyControls setChecks={setChecks} setVolume={setVolume} onPlay={handlePlay} onStop={handleStop} />
 
     </div>
 

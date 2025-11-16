@@ -6,7 +6,7 @@ function EffectControls({ effect, setEffect }) {
 
         <div className="effect-controls text-muted small d-flex align-items-center gap-2">
 
-            <b className="text-info">🎛 Effect:</b>
+            <b className="text-info">🎵 Effect:</b>
 
             <label className="form-check-label">
 

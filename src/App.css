@@ -1,4 +1,4 @@
-:root {
+﻿:root {
     --hero-bg1: #5b2be1;
     --hero-bg2: #0f0c29;
     --hero-accent: #6ee7f9;
@@ -300,10 +300,10 @@ body {
     color: #d9faff;
 }
 
-    .hotkey-list b {
-        color: #6ee7f9;
-        font-weight: 700;
-    }
+.hotkey-list b {
+    color: #6ee7f9;
+    font-weight: 700;
+}
 
 .hotkey-last {
     color: #7dd3fc;
@@ -311,3 +311,82 @@ body {
     font-size: 12px;
     opacity: 0.9;
 }
+
+
+.effect-bar {
+    position: fixed;
+    bottom: 4px;
+    left: 24px;
+    background: rgba(25, 28, 38, 0.9);
+    border: 1px solid rgba(110, 231, 249, 0.25);
+    border-radius: 10px;
+    padding: 10px 36px 12px;
+    min-width: 460px; 
+    backdrop-filter: blur(12px) saturate(150%);
+    -webkit-backdrop-filter: blur(12px) saturate(150%);
+    box-shadow: 0 0 14px rgba(110, 231, 249, 0.12), 0 -1px 10px rgba(0, 0, 0, 0.6);
+    z-index: 99;
+    color: #dff8ff;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 14px;
+    text-shadow: 0 0 6px rgba(110, 231, 249, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 28px;
+}
+
+
+.effect-controls {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 28px; 
+    flex-wrap: wrap;
+    padding-left: 6px; 
+}
+
+  
+.effect-controls b {
+        color: #6ee7f9;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        font-weight: 700;
+        font-size: 13.8px;
+        display: flex;
+        align-items: center;
+        gap: 12px; 
+        margin-right: 14px; 
+}
+
+
+.effect-controls input[type="radio"] {
+        accent-color: #6ee7f9;
+        cursor: pointer;
+        transform: scale(1.25);
+        margin-right: 8px; 
+}
+
+
+.effect-controls input[type="radio"]:checked {
+            filter: drop-shadow(0 0 5px #6ee7f9);
+}
+
+
+.effect-controls label {
+        color: #6ee7f9;
+        font-weight: 500;
+        cursor: pointer;
+        transition: color 0.2s ease;
+        letter-spacing: 0.3px;
+        margin-right: 14px;
+}
+
+
+.effect-controls label:hover {
+            
+      color: #d9faff;
+}
+
+
+
