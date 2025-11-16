@@ -19,6 +19,7 @@ import FormChecks from "./components/FormChecks"
 import HotkeyControls from "./components/HotkeyControls";
 import EffectControls from "./components/EffectControls";
 import JsonControls from "./components/JsonControls";
+import Graph from "./components/Graph";
 
 
 let globalEditor = null;
@@ -364,6 +365,11 @@ export default function StrudelDemo() {
                 </div>
 
              </div>
+
+                      <div className="col-12 col-lg-4">
+                          <Graph />
+                      </div>
+
           </div>
         </div>
 
