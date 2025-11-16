@@ -271,7 +271,7 @@ body {
     background: rgba(25, 28, 38, 0.9);
     border: 1px solid rgba(110, 231, 249, 0.25);
     border-radius: 10px;
-    padding: 8px 20px 10px;
+    padding: 8px 20px 10px; 
     backdrop-filter: blur(12px) saturate(150%);
     -webkit-backdrop-filter: blur(12px) saturate(150%);
     box-shadow: 0 0 12px rgba(110, 231, 249, 0.1), 0 -1px 10px rgba(0, 0, 0, 0.6);
@@ -320,8 +320,8 @@ body {
     background: rgba(25, 28, 38, 0.9);
     border: 1px solid rgba(110, 231, 249, 0.25);
     border-radius: 10px;
-    padding: 10px 36px 12px;
-    min-width: 460px; 
+    padding: 8px 20px 10px;
+    min-width: 460px;
     backdrop-filter: blur(12px) saturate(150%);
     -webkit-backdrop-filter: blur(12px) saturate(150%);
     box-shadow: 0 0 14px rgba(110, 231, 249, 0.12), 0 -1px 10px rgba(0, 0, 0, 0.6);
@@ -389,4 +389,73 @@ body {
 }
 
 
+.json-bar {
+    position: fixed;
+    bottom: 4px;
+    right: 24px;
+    background: rgba(25, 28, 38, 0.9);
+    border: 1px solid rgba(110, 231, 249, 0.25);
+    border-radius: 10px;
+    padding: 6px 18px 8px;
+    backdrop-filter: blur(12px) saturate(150%);
+    -webkit-backdrop-filter: blur(12px) saturate(150%);
+    box-shadow: 0 0 12px rgba(110, 231, 249, 0.1), 0 -1px 10px rgba(0, 0, 0, 0.6);
+    z-index: 100;
+    color: #bdeeff;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 13px;
+    text-shadow: 0 0 6px rgba(110, 231, 249, 0.4);
+}
 
+
+.json-inner {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 28px;
+      flex-wrap: wrap;
+      padding-left: 6px;
+}
+
+
+.json-title {
+    font-weight: 700;
+    color: #6ee7f9;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+}
+
+
+.json-btn {
+    background: rgba(45, 55, 65, 0.6);
+    color: #aefaff;
+    border: 1px solid rgba(110, 231, 249, 0.25);
+    border-radius: 6px;
+    padding: 4px 10px;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 13px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+
+}
+
+
+.json-btn:hover {
+        background: rgba(110, 231, 249, 0.15);
+        color: #fff;
+        border-color: rgba(110, 231, 249, 0.6);
+}
+
+
+.file-label {
+    position: relative;
+    overflow: hidden;
+}
+
+
+.file-label input[type="file"] {
+        position: absolute;
+        inset: 0;
+        opacity: 0;
+        cursor: pointer;
+}

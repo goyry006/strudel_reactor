@@ -50,7 +50,7 @@ function JsonControls({ getSettings, applySettings }) {
 
             <div className="json-inner">
 
-                <span className="json-title">🗂 SETTINGS:</span>
+                <span className="json-title">🧩 SETTINGS:</span>
                 <button className="json-btn" onClick={handleSave}>💾 Save</button>
 
                 <label className="json-btn file-label">
