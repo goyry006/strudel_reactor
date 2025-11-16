@@ -189,6 +189,5 @@ let mainStack = stack(
 )
 <s1>
 <d1>
-mainStack = mainStack.add(room(.25)).gain(<volume>)
-mainStack`
+mainStack = mainStack.add(room(.25)).gain(<volume>).log()`
 

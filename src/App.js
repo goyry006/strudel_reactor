@@ -23,6 +23,12 @@ import JsonControls from "./components/JsonControls";
 
 let globalEditor = null;
 
+const handleD3Data = (event) => {
+
+    console.log("Live HAP Data:", event.detail);
+
+};
+
 export default function StrudelDemo() {
 
   const hasRun = useRef(false);
@@ -74,18 +80,19 @@ export default function StrudelDemo() {
 
             switch (effect) {
                 case "reverb":
-                    processed += '\nmainStack = mainStack.room(0.5)';  
+                    processed += '\nmainStack = mainStack.room(0.9)';
                     break;
                 case "echo":
-                    processed += '\nmainStack = mainStack.delay(0.25).gain(0.9)'; 
+                    processed += '\nmainStack = mainStack.delay(0.4)';
                     break;
                 case "distortion":
-                    processed += '\nmainStack = mainStack.distort(0.3)'; 
+                    processed += '\nmainStack = mainStack.distort(0.8)';
                     break;
                 default:
                     break;
             }
 
+            processed += `\nmainStack = mainStack.gain(${Number(volume).toFixed(2)});`;
             return processed;
         },
 
@@ -108,6 +115,7 @@ export default function StrudelDemo() {
     hasRun.current = true;
 
     console_monkey_patch();
+    document.addEventListener("d3Data", handleD3Data);
 
     const canvas = document.getElementById('roll');
     const ctx    = canvas.getContext('2d');
@@ -156,7 +164,12 @@ export default function StrudelDemo() {
 
     globalEditor.setCode(preprocess(songText));
 
-    return () => window.removeEventListener('resize', sizeCanvas);
+    return () => {
+
+          window.removeEventListener('resize', sizeCanvas);
+          document.removeEventListener("d3Data", handleD3Data);
+    };
+
     
   },[]); // eslint-disable-next-line react-hooks/exhaustive-deps
 
