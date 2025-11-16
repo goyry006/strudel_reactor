@@ -18,6 +18,8 @@ import Slider from "./components/Slider"
 import FormChecks from "./components/FormChecks"
 import HotkeyControls from "./components/HotkeyControls";
 import EffectControls from "./components/EffectControls";
+import JsonControls from "./components/JsonControls";
+
 
 let globalEditor = null;
 
@@ -34,7 +36,25 @@ export default function StrudelDemo() {
 
 
   const handlePlay  = () => { globalEditor?.evaluate(); };
-  const handleStop  = () => { globalEditor?.stop(); };
+  const handleStop = () => { globalEditor?.stop(); };
+
+  const getSettings = () => ({
+        pattern: p1Radio,
+        volume,
+        cpm,
+        checks,
+        effect,
+  });
+
+  const applySettings = (data) => {
+
+        setP1Radio(data.pattern || "ON");
+        setVolume(data.volume ?? 0.7);
+        setCpm(data.cpm ?? 45.5);
+        setChecks(data.checks || { c1: false, c2: false });
+        setEffect(data.effect || "reverb");
+
+  };
 
     const preprocess = useCallback(
 
@@ -54,13 +74,13 @@ export default function StrudelDemo() {
 
             switch (effect) {
                 case "reverb":
-                    processed += '\nmainStack = mainStack.room(0.5)';  // subtle echoing space
+                    processed += '\nmainStack = mainStack.room(0.5)';  
                     break;
                 case "echo":
-                    processed += '\nmainStack = mainStack.delay(0.25).gain(0.9)'; // bounce back delay
+                    processed += '\nmainStack = mainStack.delay(0.25).gain(0.9)'; 
                     break;
                 case "distortion":
-                    processed += '\nmainStack = mainStack.distort(0.3)'; // crunchy distortion
+                    processed += '\nmainStack = mainStack.distort(0.3)'; 
                     break;
                 default:
                     break;
@@ -342,6 +362,7 @@ export default function StrudelDemo() {
       </div>
 
       <HotkeyControls setChecks={setChecks} setVolume={setVolume} onPlay={handlePlay} onStop={handleStop} />
+      <JsonControls getSettings={getSettings} applySettings={applySettings} />
 
     </div>
 
