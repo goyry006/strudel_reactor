@@ -1,70 +1,170 @@
-# Getting Started with Create React App
+STRUDel – Interactive Web Music Sequencer
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This web-based application is an interactive music sequencer developed using React, D3.js, and the Strudel.cc framework. It allows users to write musical patterns, process them in real time, and visualize their playback through both graphical and audio components.
 
-## Available Scripts
+Overview
 
-In the project directory, you can run:
+The system enables users to compose short musical phrases and experiment with sound directly in the browser. By integrating Strudel’s live coding environment with the Web Audio API, the application processes user input dynamically and provides immediate feedback through sound output and visualization.
 
-### `npm start`
+The interface has been designed to replicate the experience of a lightweight digital audio workstation (DAW). It combines real-time sound generation, rhythm control, and visual feedback within a single, browser-based interface.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Control Descriptions
+Primary Controls
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Preprocess
+Prepares the user’s Strudel code by converting placeholders such as <tempoLine> and <s1> into valid syntax before playback. This step ensures that user adjustments to tempo, rhythm layers, and volume are reflected in the processed output.
 
-### `npm test`
+Proc & Play
+Combines preprocessing and playback in one step. It automatically applies the user’s latest settings and initiates the music sequence without requiring two separate actions.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Play
+Executes the currently loaded Strudel code, beginning real-time sound output through the browser’s audio engine.
 
-### `npm run build`
+Stop
+Stops all sound generation and resets the playback state. It is an immediate stop function for testing or composition refinement.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Pattern Toggle (p1: ON / HUSH)
+This toggle switches the primary pattern layer on or off. “ON” maintains the main rhythmic structure, while “HUSH” silences it temporarily without resetting user configurations.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Volume Slider
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+The volume slider controls the master gain level of all active sounds. Adjusting the slider updates the gain node in real time, which directly affects the amplitude of the Web Audio context.
+It provides precise volume management and displays the numeric value alongside the slider.
+Internally, volume changes also trigger a code re-render to maintain consistency between the visual display and Strudel playback.
+The value range is normalized between 0 and 1, allowing fine-grained control over loudness without clipping or distortion.
 
-### `npm run eject`
+CPM (Cycles Per Minute)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+The CPM control determines the playback speed of the composition. It converts user input from CPM to CPS (Cycles Per Second), which is required by Strudel’s timing engine.
+Changes to CPM automatically adjust the <tempoLine> in the code, synchronizing both rhythmic playback and visual rendering.
+A default of 45.5 CPM is provided, representing a moderate tempo suitable for electronic rhythm patterns.
+Values are clamped between 30 and 300 to prevent unrealistic speeds or audio desynchronization.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+FormCheck (Layer Toggles)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+The FormCheck component enables or disables additional rhythmic layers within the music. Two key layers are available:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+s1 (Snare Layer): Adds a repeating snare pattern to enrich rhythm.
 
-## Learn More
+d1 (Hi-Hat Layer): Adds a hi-hat pattern (hh(3,8)) with gain adjustment for softer balance.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+When checked, these options append corresponding Strudel commands (s("bd sn"), s("hh(3,8)").gain(0.7)) to the main stack.
+This system allows dynamic layering of beats during playback and is frequently used for creating contrast or rhythm variation in live compositions.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Radio Buttons (Audio Effects)
 
-### Code Splitting
+The radio buttons select one of three global sound effects applied to the entire playback:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Reverb: Simulates room acoustics using mainStack.room(0.9) to produce spatial depth.
 
-### Analyzing the Bundle Size
+Echo: Adds delay and repetition with mainStack.delay(0.4) for rhythmic echo.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Distortion: Applies an overdrive effect using mainStack.distort(0.8) to produce a more aggressive timbre.
 
-### Making a Progressive Web App
+Each effect modifies the Strudel chain before evaluation, allowing users to experiment with different sonic textures without altering their base code.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Hotkeys
 
-### Advanced Configuration
+The application includes keyboard shortcuts to support live performance and faster interaction:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+1: Toggles the snare layer (s1).
 
-### Deployment
+2: Toggles the hi-hat layer (d1).
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+3: Silences all playback (uncheck both).
 
-### `npm run build` fails to minify
+V / B: Decrease or increase volume.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+P / S: Play or stop the playback instantly.
+
+These hotkeys are intended to replicate the live-coding performance environment found in Strudel and TidalCycles, allowing on-the-fly improvisation and immediate feedback during demonstrations.
+
+Theme Toggle (Light / Dark Mode)
+
+The theme toggle switch dynamically changes between light and dark modes by setting the HTML root attribute data-theme.
+It instantly updates CSS variables such as --hero-bg1, --txt, and --muted, allowing global color transformation without reloading the page.
+The dark mode improves contrast for D3 visuals and aligns with modern music production interfaces.
+This toggle is fully reactive and stored temporarily in the browser’s runtime, ensuring seamless transitions without external dependencies.
+
+Beats Visualizer (Canvas Piano Roll)
+
+The Beats panel displays the rhythmic and melodic content of the live music using a canvas-based piano roll visualization.
+It is powered by Strudel’s drawPianoroll function, which renders horizontal bars corresponding to note lengths and positions.
+The system continuously updates in real time as the user modifies patterns or applies preprocessing.
+
+Each bar represents a note event—its position maps to timing, and its height corresponds to pitch.
+The visualization provides immediate feedback on rhythmic accuracy, layering, and tempo.
+The canvas automatically resizes with the browser window and adjusts for high-DPI displays using the devicePixelRatio property.
+This ensures crisp visuals suitable for performance projection or marking demonstrations.
+
+The JSON system allows users to preserve or reload complete session states for consistent playback.
+When Save is clicked, the application serializes key values—including pattern state, volume, CPM, selected effects, and checkbox settings—into a downloadable .json file.
+When Load is used, the system reads that file, parses it, and restores every saved parameter into the interface.
+
+This ensures reproducibility of results between sessions, allowing a user to continue where they left off without manually reconfiguring settings.
+The feature also supports demonstration marking, since assessors can reload the same configuration used in the video proof.
+Internally, JSON handling is done through the File API, ensuring privacy and zero server-side storage.
+It provides persistence, consistency, and a reusable template for sharing musical configurations across users or performances.
+
+D3 Graph (Live Note Visualization)
+
+The D3 Graph provides a real-time visual representation of all note data produced by Strudel’s playback engine.
+It listens for d3Data events emitted by the Web Audio context and parses each note’s pitch (MIDI value) before plotting it dynamically using D3.js.
+
+The graph automatically scales its axes to fit the range of incoming notes, showing how pitch evolves across time.
+A gradient stroke transitions from green to red, visually representing note intensity, while a subtle Gaussian blur filter adds glow for clarity.
+Each new note smoothly animates into the graph through D3’s transition engine, creating a fluid waveform-like motion.
+
+The purpose of this component is to help visualize the structure of musical layers—whether percussive, melodic, or harmonic.
+It enhances feedback for the performer by showing the relationship between rhythmic density, pitch range, and real-time playback events.
+It also helps demonstrate data-binding concepts between live music code and real-time SVG rendering, bridging creative coding and data visualizatio
+
+Quirks and Usage Guidelines
+
+Audio will only start after the user’s first click due to browser security policies.
+
+Changes to CPM, volume, or effect selections automatically trigger re-rendering.
+
+The system performs best in Google Chrome or Microsoft Edge.
+
+JSON loading replaces existing settings, so users should save configurations before loading a new one.
+
+The dark theme is visually optimized for low-light or performance environments
+
+Demonstration Video
+
+
+
+
+Bonus Points and Evidence
+
+Real-time D3 visualization synchronized with musical playback.
+
+Integrated hotkey system for live performance.
+
+JSON persistence system for configuration storage.
+
+Responsive glassmorphic UI design based on dynamic theme toggling.
+
+Video demonstration.
+
+Song Code Attribution
+
+Patterns adapted and customized from the Strudel.cc Bakery 
+"theres no soul here" @by froos 
+@date 23-08-21
+@version 1.0
+Additional layering logic and gain adjustments were implemented to enhance rhythm and tonal balance.
+
+AI Tools Used
+
+ChatGPT was used solely to assist with debugging layout inconsistencies, refining alignment of UI components (notably CPM and Navbar controls), and preparing initial documentation drafts.
+All code implementation, testing, and design verification were manually completed in Visual Studio Code.
+AI inputs were restricted to descriptive problem-solving and phrasing support, and all outputs were revised to comply with academic integrity requirements.
+
+References
+
+1. W3Schools.com. (n.d.). https://www.w3schools.com/graphics/canvas_intro.asp
+2. Contributors, M. O. J. T. a. B. (n.d.). Checks and radios. https://getbootstrap.com/docs/5.3/forms/checks-radios/#without-labels
+3. W3Schools.com. (n.d.-b). https://www.w3schools.com/react/react_forms_radio.asp
+1. W3Schools.com. (n.d.-c). https://www.w3schools.com/js/js_json.asp
