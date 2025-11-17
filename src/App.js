@@ -349,28 +349,41 @@ export default function StrudelDemo() {
             </div>
 
 
-            {/* BEATS */}
-             <div className="col-12 col-lg-4">
+            {/* BEATS  and GRAPH*/}
+            
+            <div className="col-12 col-lg-4 d-flex flex-column gap-4">
 
-                <div className="glass-card h-100 beats-card">
+
+                {/* BEATS (top half) */}
+                <div className="glass-card flex-fill half-card">
 
                     <div className="card-head">BEATS</div>
 
-                        <div className="card-body">
+                        <div className="card-body p-0">
 
-                            <canvas id="roll" className="beats-canvas" />
+                                  <canvas id="roll" className="beats-canvas" />
 
                         </div>
 
                 </div>
 
-             </div>
+                {/* GRAPH (bottom half) */}
+                <div className="glass-card flex-fill half-card">
 
-                      <div className="col-12 col-lg-4">
-                          <Graph />
-                      </div>
+                        <div className="card-head">LIVE NOTE GRAPH</div>
+
+                        <div className="card-body p-0">
+
+                                  <Graph />
+
+                        </div>
+
+                </div>
+
+            </div>
 
           </div>
+
         </div>
 
 

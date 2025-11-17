@@ -1,23 +1,18 @@
 ﻿import React, { useEffect, useRef, useState } from "react";
-import {
-    select,
-    scaleLinear,
-    line,
-    axisBottom,
-    axisLeft,
-    curveMonotoneX,
-    max,
-    transition,
-} from "d3";
+import { select, scaleLinear, line, axisBottom, axisLeft, curveMonotoneX, max, transition, } from "d3";
 
 export default function Graph() {
+
     const svgRef = useRef(null);
     const [data, setData] = useState([]);
 
-    // Listen for Strudel HAP events
+    
     useEffect(() => {
+
         const handleD3Event = (event) => {
+
             const raw = event.detail || [];
+
             const parsed = raw
                 .map((entry) => {
                     const match = entry.match(/note:(\d+(\.\d+)?)/);
@@ -25,21 +20,39 @@ export default function Graph() {
                 })
                 .filter((v) => v !== null);
             setData(parsed);
+
         };
 
         document.addEventListener("d3Data", handleD3Event);
         return () => document.removeEventListener("d3Data", handleD3Event);
+
     }, []);
 
+
     useEffect(() => {
+
         const svg = select(svgRef.current);
-        const width = svgRef.current.clientWidth || 600;
-        const height = svgRef.current.clientHeight || 300;
+        const ratio = window.devicePixelRatio || 1;
+        const rect = svgRef.current.getBoundingClientRect();
+        const width = rect.width * ratio;
+        const height = rect.height * ratio;
+
+        // tell SVG to render in full pixel resolution
+        svg.attr("width", width)
+            .attr("height", height)
+            .attr("viewBox", `0 0 ${width} ${height}`)
+            .style("width", "100%")
+            .style("height", "100%")
+            .style("shape-rendering", "geometricPrecision")
+            .style("text-rendering", "optimizeLegibility")
+            .style("image-rendering", "optimizeQuality");
+
         const margin = { top: 40, right: 30, bottom: 45, left: 75 };
 
         svg.selectAll("*").remove();
 
-        if (data.length === 0) {
+        if (data.length === 0)
+        {
             svg
                 .append("text")
                 .attr("x", width / 2)
@@ -50,16 +63,20 @@ export default function Graph() {
             return;
         }
 
+
         const x = scaleLinear()
             .domain([0, data.length - 1])
             .range([margin.left, width - margin.right]);
+
 
         const y = scaleLinear()
             .domain([0, max(data) + 5])
             .range([height - margin.bottom, margin.top]);
 
-        // === Gradient ===
+
+        // ===This is for Gradient ===
         const defs = svg.append("defs");
+
         const gradient = defs
             .append("linearGradient")
             .attr("id", "line-gradient")
@@ -68,6 +85,7 @@ export default function Graph() {
             .attr("y1", y(0))
             .attr("x2", 0)
             .attr("y2", y(max(data)));
+
 
         gradient
             .selectAll("stop")
@@ -80,15 +98,27 @@ export default function Graph() {
             .attr("offset", (d) => d.offset)
             .attr("stop-color", (d) => d.color);
 
-        // === Glow ===
+        
+        // ===This is for Glow ===
         const defsGlow = svg.append("defs");
-        const filter = defsGlow.append("filter").attr("id", "glow");
-        filter.append("feGaussianBlur").attr("stdDeviation", "2.5").attr("result", "blur");
-        const feMerge = filter.append("feMerge");
-        feMerge.append("feMergeNode").attr("in", "blur");
-        feMerge.append("feMergeNode").attr("in", "SourceGraphic");
+        const filter = defsGlow.append("filter")
+            .attr("id", "glow")
+            .attr("x", "-50%")
+            .attr("y", "-50%")
+            .attr("width", "200%")
+            .attr("height", "200%");
+        filter.append("feGaussianBlur")
+            .attr("stdDeviation", "1.6")
+            .attr("result", "blur");
+        filter.append("feMerge")
+            .selectAll("feMergeNode")
+            .data(["blur", "SourceGraphic"])
+            .enter()
+            .append("feMergeNode")
+            .attr("in", d => d);
 
-        // === Line Generator ===
+
+        // ===This is for Line Generator ===
         const lineGen = line()
             .x((d, i) => x(i))
             .y((d) => y(d))
@@ -105,6 +135,7 @@ export default function Graph() {
             .transition(transition().duration(500))
             .attr("d", lineGen);
 
+
         // === X-axis (keep numbers only) ===
         const xAxis = axisBottom(x).ticks(6);
         const gx = svg
@@ -114,6 +145,7 @@ export default function Graph() {
         gx.selectAll("text").style("fill", "#66ffff").style("font-size", "10px");
         gx.selectAll(".domain, .tick line").attr("stroke", "#66ffff").attr("opacity", 0.3);
 
+
         // === Y-axis ===
         const yAxis = axisLeft(y).ticks(6);
         const gy = svg
@@ -122,6 +154,7 @@ export default function Graph() {
             .call(yAxis);
         gy.selectAll("text").style("fill", "#66ffff").style("font-size", "10px");
         gy.selectAll(".domain, .tick line").attr("stroke", "#66ffff").attr("opacity", 0.3);
+
 
         // === Gridlines ===
         svg
@@ -137,7 +170,7 @@ export default function Graph() {
             .attr("stroke", "#00ffff")
             .attr("stroke-opacity", 0.05);
 
-        // === Only Y-axis label (no X label) ===
+        // === Only Y-axis having label, not X axis ===
         svg
             .append("text")
             .attr("transform", "rotate(-90)")
@@ -147,21 +180,14 @@ export default function Graph() {
             .attr("fill", "#66ffff")
             .attr("font-size", "11px")
             .text("Note Value (Pitch / MIDI Number)");
+
     }, [data]);
 
+
     return (
-        <div className="glass-card h-100 beats-card">
-            <div className="card-head">
-                🎵 <span style={{ color: "#66ffff" }}>LIVE NOTE GRAPH</span>
-            </div>
-            <div className="card-body">
-                <svg
-                    ref={svgRef}
-                    width="100%"
-                    height="320px"
-                    className="border border-primary rounded p-2"
-                ></svg>
-            </div>
+        <div className="graph-wrapper">
+            <svg ref={svgRef}></svg>
         </div>
     );
+
 }
