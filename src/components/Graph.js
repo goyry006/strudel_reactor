@@ -1,8 +1,4 @@
-﻿// === Graph.js ===
-// React component for visualising Strudel .log() output in real time using D3
-// Compatible with your console_monkey_patch.js (dispatches 'd3Data' events)
-
-import React, { useEffect, useRef, useState } from "react";
+﻿import React, { useEffect, useRef, useState } from "react";
 import {
     select,
     scaleLinear,
@@ -11,22 +7,23 @@ import {
     axisLeft,
     curveMonotoneX,
     max,
+    transition,
 } from "d3";
 
 export default function Graph() {
     const svgRef = useRef(null);
-    const [data, setData] = useState([]); // stores parsed HAP values
+    const [data, setData] = useState([]);
 
-    // === Listen for d3Data events from console_monkey_patch.js ===
+    // Listen for Strudel HAP events
     useEffect(() => {
         const handleD3Event = (event) => {
-            // event.detail is an array of up to 100 strings from console logs
             const raw = event.detail || [];
-            const parsed = raw.map((entry) => {
-                // Extract "note:XX" numeric values from strings
-                const match = entry.match(/note:(\d+(\.\d+)?)/);
-                return match ? parseFloat(match[1]) : null;
-            }).filter((v) => v !== null);
+            const parsed = raw
+                .map((entry) => {
+                    const match = entry.match(/note:(\d+(\.\d+)?)/);
+                    return match ? parseFloat(match[1]) : null;
+                })
+                .filter((v) => v !== null);
             setData(parsed);
         };
 
@@ -34,18 +31,17 @@ export default function Graph() {
         return () => document.removeEventListener("d3Data", handleD3Event);
     }, []);
 
-    // === Draw / Update graph ===
     useEffect(() => {
         const svg = select(svgRef.current);
         const width = svgRef.current.clientWidth || 600;
         const height = svgRef.current.clientHeight || 300;
-        const margin = { top: 20, right: 20, bottom: 30, left: 50 };
+        const margin = { top: 40, right: 30, bottom: 45, left: 75 };
 
-        // Clear previous drawings
         svg.selectAll("*").remove();
 
         if (data.length === 0) {
-            svg.append("text")
+            svg
+                .append("text")
                 .attr("x", width / 2)
                 .attr("y", height / 2)
                 .attr("text-anchor", "middle")
@@ -54,58 +50,115 @@ export default function Graph() {
             return;
         }
 
-        // === Define scales ===
         const x = scaleLinear()
             .domain([0, data.length - 1])
             .range([margin.left, width - margin.right]);
 
         const y = scaleLinear()
-            .domain([0, max(data)])
+            .domain([0, max(data) + 5])
             .range([height - margin.bottom, margin.top]);
 
-        // === Define line generator ===
+        // === Gradient ===
+        const defs = svg.append("defs");
+        const gradient = defs
+            .append("linearGradient")
+            .attr("id", "line-gradient")
+            .attr("gradientUnits", "userSpaceOnUse")
+            .attr("x1", 0)
+            .attr("y1", y(0))
+            .attr("x2", 0)
+            .attr("y2", y(max(data)));
+
+        gradient
+            .selectAll("stop")
+            .data([
+                { offset: "0%", color: "#00ff77" },
+                { offset: "100%", color: "#ff004c" },
+            ])
+            .enter()
+            .append("stop")
+            .attr("offset", (d) => d.offset)
+            .attr("stop-color", (d) => d.color);
+
+        // === Glow ===
+        const defsGlow = svg.append("defs");
+        const filter = defsGlow.append("filter").attr("id", "glow");
+        filter.append("feGaussianBlur").attr("stdDeviation", "2.5").attr("result", "blur");
+        const feMerge = filter.append("feMerge");
+        feMerge.append("feMergeNode").attr("in", "blur");
+        feMerge.append("feMergeNode").attr("in", "SourceGraphic");
+
+        // === Line Generator ===
         const lineGen = line()
             .x((d, i) => x(i))
             .y((d) => y(d))
             .curve(curveMonotoneX);
 
-        // === Draw path ===
         svg
             .append("path")
             .datum(data)
             .attr("fill", "none")
-            .attr("stroke", "#00ffff")
-            .attr("stroke-width", 2)
+            .attr("stroke", "url(#line-gradient)")
+            .attr("stroke-width", 2.5)
+            .attr("filter", "url(#glow)")
+            .attr("d", lineGen)
+            .transition(transition().duration(500))
             .attr("d", lineGen);
 
-        // === Draw axes ===
-        svg
+        // === X-axis (keep numbers only) ===
+        const xAxis = axisBottom(x).ticks(6);
+        const gx = svg
             .append("g")
             .attr("transform", `translate(0,${height - margin.bottom})`)
-            .call(axisBottom(x).ticks(5));
+            .call(xAxis);
+        gx.selectAll("text").style("fill", "#66ffff").style("font-size", "10px");
+        gx.selectAll(".domain, .tick line").attr("stroke", "#66ffff").attr("opacity", 0.3);
 
-        svg
+        // === Y-axis ===
+        const yAxis = axisLeft(y).ticks(6);
+        const gy = svg
             .append("g")
             .attr("transform", `translate(${margin.left},0)`)
-            .call(axisLeft(y).ticks(5));
+            .call(yAxis);
+        gy.selectAll("text").style("fill", "#66ffff").style("font-size", "10px");
+        gy.selectAll(".domain, .tick line").attr("stroke", "#66ffff").attr("opacity", 0.3);
 
+        // === Gridlines ===
+        svg
+            .append("g")
+            .attr("class", "grid")
+            .attr("transform", `translate(${margin.left},0)`)
+            .call(
+                axisLeft(y)
+                    .tickSize(-width + margin.left + margin.right)
+                    .tickFormat("")
+            )
+            .selectAll("line")
+            .attr("stroke", "#00ffff")
+            .attr("stroke-opacity", 0.05);
+
+        // === Only Y-axis label (no X label) ===
+        svg
+            .append("text")
+            .attr("transform", "rotate(-90)")
+            .attr("x", -height / 2)
+            .attr("y", 20)
+            .attr("text-anchor", "middle")
+            .attr("fill", "#66ffff")
+            .attr("font-size", "11px")
+            .text("Note Value (Pitch / MIDI Number)");
     }, [data]);
-
-    // === Responsive resizing ===
-    useEffect(() => {
-        const resizeHandler = () => setData((d) => [...d]);
-        window.addEventListener("resize", resizeHandler);
-        return () => window.removeEventListener("resize", resizeHandler);
-    }, []);
 
     return (
         <div className="glass-card h-100 beats-card">
-            <div className="card-head">D3 LIVE GRAPH</div>
+            <div className="card-head">
+                🎵 <span style={{ color: "#66ffff" }}>LIVE NOTE GRAPH</span>
+            </div>
             <div className="card-body">
                 <svg
                     ref={svgRef}
                     width="100%"
-                    height="300px"
+                    height="320px"
                     className="border border-primary rounded p-2"
                 ></svg>
             </div>
