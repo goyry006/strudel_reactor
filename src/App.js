@@ -244,9 +244,9 @@ export default function StrudelDemo() {
             </div>
 
             
-            <div className="nb__right"> {/* RIGHT: volume */}
+            <div className="nb__right"> 
 
-                   <label htmlFor="volrange" className="nb__label nb__label--vol">Volume</label>
+                   <label htmlFor="volrange" className="nb__label nb__label--vol">Volume</label> {/* RIGHT: volume */}
 
                    <div className="nb__slider">
 
@@ -256,17 +256,13 @@ export default function StrudelDemo() {
 
                    <span className="nb__volnum">{volume.toFixed(2)}</span>
 
-            </div>
+                   <div className="ms-3 d-flex align-items-center" style={{ minWidth: 180 }}> {/* Tempo (CPM) */}
 
+                       <CpmControl value={cpm} onChange={setCpm} />
 
-            <div className="ms-3" style={{ minWidth: 180 }}> {/* Tempo (CPM) */}
+                       <div className="small text-muted ms-2">CPS: {(cpm / 60).toFixed(3)}</div>
 
-                    <CpmControl value={cpm} onChange={setCpm} />
-
-                    <div className="small text-muted">
-                          CPS: {(cpm / 60).toFixed(3)}
-                    </div>
-
+                   </div>
             </div>
 
 
