@@ -6,33 +6,34 @@ function JsonControls({ getSettings, applySettings }) {
     const handleSave = () => {
 
         const settings = getSettings();
-        const blob = new Blob([JSON.stringify(settings, null, 2)], { type: "application/json" });
-        const url = URL.createObjectURL(blob);
+        const blob = new Blob([JSON.stringify(settings, null, 2)], { type: "application/json" }); // Convert to formatted JSON blob
+        const url = URL.createObjectURL(blob); // Create temporary URL for download
         const a = document.createElement("a");
 
         a.href = url;
         a.download = "strudel-settings.json";
         a.click();
-        URL.revokeObjectURL(url);
+        URL.revokeObjectURL(url); // Free memory
 
     };
 
     // Load settings from JSON file
     const handleLoad = (e) => {
 
-        const file = e.target.files[0];
+        const file = e.target.files[0]; // Get uploaded file
 
-        if (!file) return;
+        if (!file) return; // Exit if no file selected
 
         const reader = new FileReader();
         reader.onload = (event) => {
 
             try
             {
-                const data = JSON.parse(event.target.result);
-                applySettings(data);
+                const data = JSON.parse(event.target.result); // Parse JSON content
+                applySettings(data); // Apply to app 
 
             }
+
             catch (err)
             {
 
@@ -41,18 +42,22 @@ function JsonControls({ getSettings, applySettings }) {
             }
         };
 
-        reader.readAsText(file);
+        reader.readAsText(file); // Read file as text
     };
 
     return (
 
+        // Persistent control bar for saving/loading JSON configuration
         <div className="json-bar">
 
             <div className="json-inner">
 
                 <span className="json-title">🧩 SETTINGS:</span>
+
+                {/* Save configuration button */}
                 <button className="json-btn" onClick={handleSave}>💾 Save</button>
 
+                {/* Load configuration file input */}
                 <label className="json-btn file-label">
                     📂 Load
                     <input type="file" accept="application/json" onChange={handleLoad} />

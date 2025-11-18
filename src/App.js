@@ -24,6 +24,7 @@ import Graph from "./components/Graph";
 
 let globalEditor = null;
 
+// Custom event listener for D3 graph debugging
 const handleD3Data = (event) => {
 
     console.log("Live HAP Data:", event.detail);
@@ -37,14 +38,15 @@ export default function StrudelDemo() {
   const [songText, setSongText] = useState(stranger_tune);
   const [p1Radio, setP1Radio] = useState('ON'); // 'ON' | 'HUSH'
   const [volume, setVolume] = useState(0.7);    // 0..1
-  const [cpm, setCpm] = useState(45.5);
-  const [checks, setChecks] = useState({ c1: false, c2: false });
-  const [effect, setEffect] = useState("reverb");
+  const [cpm, setCpm] = useState(45.5);  // Tempo in Cycles Per Minute
+  const [checks, setChecks] = useState({ c1: false, c2: false }); // Rhythm layers
+  const [effect, setEffect] = useState("reverb"); // Audio effect
 
 
   const handlePlay  = () => { globalEditor?.evaluate(); };
   const handleStop = () => { globalEditor?.stop(); };
 
+  // === Save/load settings for JSON persistence ===
   const getSettings = () => ({
         pattern: p1Radio,
         volume,
@@ -63,22 +65,26 @@ export default function StrudelDemo() {
 
   };
 
-    const preprocess = useCallback(
+  // === Preprocessing step before playback ===
+  const preprocess = useCallback(
 
         (text) => {
             const cps = (Number(cpm) / 60) || 2; 
-           
+
+            // Replace placeholders with actual parameters
             let processed = text
                 .replaceAll('<p1_Radio>', p1Radio === 'ON' ? '' : '_')
                 .replaceAll('<volume>', String(Number(volume).toFixed(2)))
                 .replaceAll('<tempoLine>', `setcps(${cps.toFixed(3)})`);
 
+            // Inject rhythm layers dynamically
             if (checks.c1) processed = processed.replace('<s1>', '\nmainStack = stack(mainStack, s("bd sn"))');
             else processed = processed.replace('<s1>', '');
 
             if (checks.c2) processed = processed.replace('<d1>', '\nmainStack = stack(mainStack, s("hh(3,8)").gain(0.7))');
             else processed = processed.replace('<d1>', '');
 
+            // Apply chosen audio effect
             switch (effect) {
                 case "reverb":
                     processed += '\nmainStack = mainStack.room(0.9)';
@@ -98,24 +104,26 @@ export default function StrudelDemo() {
         },
 
         [p1Radio, volume, cpm, checks, effect]
-    );
+  );
 
-
+  // Manual preprocess button
   const handleProcess = () => { const processed = preprocess(songText);
         if (globalEditor) globalEditor.setCode(processed);
   };
 
+  // Combined process + play button
   const handleProcessAndPlay = () => {handleProcess();
         globalEditor?.evaluate();
   };
 
+  // === Initialize Strudel environment ===
   useEffect(() => {
 
 
     if (hasRun.current) return;
     hasRun.current = true;
 
-    console_monkey_patch();
+    console_monkey_patch(); // Enable D3 event patching
     document.addEventListener("d3Data", handleD3Data);
 
     const canvas = document.getElementById('roll');
@@ -135,6 +143,7 @@ export default function StrudelDemo() {
     requestAnimationFrame(sizeCanvas);
     window.addEventListener('resize', sizeCanvas);
 
+    // Initialize StrudelMirror editor
     globalEditor = new StrudelMirror ({
 
       defaultOutput: webaudioOutput,
@@ -174,14 +183,14 @@ export default function StrudelDemo() {
     
   },[]); // eslint-disable-next-line react-hooks/exhaustive-deps
 
-
+  // Reprocess when tune changes
   useEffect(() => {
 
         globalEditor?.setCode(preprocess(songText));
 
   }, [songText, preprocess]);
 
-  
+  // Live updates when parameters change
   useEffect(() => {
 
       if (!globalEditor) return;
@@ -385,10 +394,14 @@ export default function StrudelDemo() {
 
       </section>
 
+      {/* FOOTER CONTROLS */}
+
       <div className="effect-bar">
               <EffectControls effect={effect} setEffect={setEffect} />
       </div>
 
+
+      {/* Keyboard hotkeys + JSON save/load */}
       <HotkeyControls setChecks={setChecks} setVolume={setVolume} onPlay={handlePlay} onStop={handleStop} />
       <JsonControls getSettings={getSettings} applySettings={applySettings} />
 

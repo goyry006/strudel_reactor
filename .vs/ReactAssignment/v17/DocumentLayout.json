@@ -1,12 +1,207 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "D:\\ReactAssignment\\strudel_reactor\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{1C538C04-AF09-44AC-9272-6DDEAA808F25}|ReactAssignment.esproj|d:\\reactassignment\\strudel_reactor\\src\\app.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{1C538C04-AF09-44AC-9272-6DDEAA808F25}|ReactAssignment.esproj|solutionrelative:src\\app.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1C538C04-AF09-44AC-9272-6DDEAA808F25}|ReactAssignment.esproj|d:\\reactassignment\\strudel_reactor\\src\\components\\jsoncontrols.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{1C538C04-AF09-44AC-9272-6DDEAA808F25}|ReactAssignment.esproj|solutionrelative:src\\components\\jsoncontrols.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1C538C04-AF09-44AC-9272-6DDEAA808F25}|ReactAssignment.esproj|d:\\reactassignment\\strudel_reactor\\src\\components\\processcontrols.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{1C538C04-AF09-44AC-9272-6DDEAA808F25}|ReactAssignment.esproj|solutionrelative:src\\components\\processcontrols.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1C538C04-AF09-44AC-9272-6DDEAA808F25}|ReactAssignment.esproj|d:\\reactassignment\\strudel_reactor\\src\\components\\slider.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{1C538C04-AF09-44AC-9272-6DDEAA808F25}|ReactAssignment.esproj|solutionrelative:src\\components\\slider.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1C538C04-AF09-44AC-9272-6DDEAA808F25}|ReactAssignment.esproj|d:\\reactassignment\\strudel_reactor\\src\\components\\hotkeycontrols.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{1C538C04-AF09-44AC-9272-6DDEAA808F25}|ReactAssignment.esproj|solutionrelative:src\\components\\hotkeycontrols.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1C538C04-AF09-44AC-9272-6DDEAA808F25}|ReactAssignment.esproj|d:\\reactassignment\\strudel_reactor\\src\\components\\graph.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{1C538C04-AF09-44AC-9272-6DDEAA808F25}|ReactAssignment.esproj|solutionrelative:src\\components\\graph.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1C538C04-AF09-44AC-9272-6DDEAA808F25}|ReactAssignment.esproj|d:\\reactassignment\\strudel_reactor\\src\\components\\formchecks.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{1C538C04-AF09-44AC-9272-6DDEAA808F25}|ReactAssignment.esproj|solutionrelative:src\\components\\formchecks.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1C538C04-AF09-44AC-9272-6DDEAA808F25}|ReactAssignment.esproj|d:\\reactassignment\\strudel_reactor\\src\\components\\effectcontrols.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{1C538C04-AF09-44AC-9272-6DDEAA808F25}|ReactAssignment.esproj|solutionrelative:src\\components\\effectcontrols.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1C538C04-AF09-44AC-9272-6DDEAA808F25}|ReactAssignment.esproj|d:\\reactassignment\\strudel_reactor\\src\\components\\cpmcontrol.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{1C538C04-AF09-44AC-9272-6DDEAA808F25}|ReactAssignment.esproj|solutionrelative:src\\components\\cpmcontrol.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1C538C04-AF09-44AC-9272-6DDEAA808F25}|ReactAssignment.esproj|d:\\reactassignment\\strudel_reactor\\readme.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
+      "RelativeMoniker": "D:0:0:{1C538C04-AF09-44AC-9272-6DDEAA808F25}|ReactAssignment.esproj|solutionrelative:readme.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1C538C04-AF09-44AC-9272-6DDEAA808F25}|ReactAssignment.esproj|d:\\reactassignment\\strudel_reactor\\src\\app.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{1C538C04-AF09-44AC-9272-6DDEAA808F25}|ReactAssignment.esproj|solutionrelative:src\\app.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "App.css",
+              "DocumentMoniker": "D:\\ReactAssignment\\strudel_reactor\\src\\App.css",
+              "RelativeDocumentMoniker": "src\\App.css",
+              "ToolTip": "D:\\ReactAssignment\\strudel_reactor\\src\\App.css",
+              "RelativeToolTip": "src\\App.css",
+              "ViewState": "AgIAAAcCAAAAAAAAAAAAABECAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-11-18T05:30:28.799Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ProcessControls.jsx",
+              "DocumentMoniker": "D:\\ReactAssignment\\strudel_reactor\\src\\components\\ProcessControls.jsx",
+              "RelativeDocumentMoniker": "src\\components\\ProcessControls.jsx",
+              "ToolTip": "D:\\ReactAssignment\\strudel_reactor\\src\\components\\ProcessControls.jsx",
+              "RelativeToolTip": "src\\components\\ProcessControls.jsx",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
+              "WhenOpened": "2025-11-18T05:30:23.634Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Slider.jsx",
+              "DocumentMoniker": "D:\\ReactAssignment\\strudel_reactor\\src\\components\\Slider.jsx",
+              "RelativeDocumentMoniker": "src\\components\\Slider.jsx",
+              "ToolTip": "D:\\ReactAssignment\\strudel_reactor\\src\\components\\Slider.jsx",
+              "RelativeToolTip": "src\\components\\Slider.jsx",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
+              "WhenOpened": "2025-11-18T05:30:19.921Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "JsonControls.js",
+              "DocumentMoniker": "D:\\ReactAssignment\\strudel_reactor\\src\\components\\JsonControls.js",
+              "RelativeDocumentMoniker": "src\\components\\JsonControls.js",
+              "ToolTip": "D:\\ReactAssignment\\strudel_reactor\\src\\components\\JsonControls.js",
+              "RelativeToolTip": "src\\components\\JsonControls.js",
+              "ViewState": "AgIAACwAAAAAAAAAAAAAwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-11-18T05:30:02.951Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "HotkeyControls.js",
+              "DocumentMoniker": "D:\\ReactAssignment\\strudel_reactor\\src\\components\\HotkeyControls.js",
+              "RelativeDocumentMoniker": "src\\components\\HotkeyControls.js",
+              "ToolTip": "D:\\ReactAssignment\\strudel_reactor\\src\\components\\HotkeyControls.js",
+              "RelativeToolTip": "src\\components\\HotkeyControls.js",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACgAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-11-18T05:28:46.568Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Graph.js",
+              "DocumentMoniker": "D:\\ReactAssignment\\strudel_reactor\\src\\components\\Graph.js",
+              "RelativeDocumentMoniker": "src\\components\\Graph.js",
+              "ToolTip": "D:\\ReactAssignment\\strudel_reactor\\src\\components\\Graph.js",
+              "RelativeToolTip": "src\\components\\Graph.js",
+              "ViewState": "AgIAAIkAAAAAAAAAAAAAwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-11-18T05:28:40.141Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "FormChecks.jsx",
+              "DocumentMoniker": "D:\\ReactAssignment\\strudel_reactor\\src\\components\\FormChecks.jsx",
+              "RelativeDocumentMoniker": "src\\components\\FormChecks.jsx",
+              "ToolTip": "D:\\ReactAssignment\\strudel_reactor\\src\\components\\FormChecks.jsx",
+              "RelativeToolTip": "src\\components\\FormChecks.jsx",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
+              "WhenOpened": "2025-11-18T05:28:37.733Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "EffectControls.js",
+              "DocumentMoniker": "D:\\ReactAssignment\\strudel_reactor\\src\\components\\EffectControls.js",
+              "RelativeDocumentMoniker": "src\\components\\EffectControls.js",
+              "ToolTip": "D:\\ReactAssignment\\strudel_reactor\\src\\components\\EffectControls.js",
+              "RelativeToolTip": "src\\components\\EffectControls.js",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-11-18T05:28:34.927Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "CpmControl.jsx",
+              "DocumentMoniker": "D:\\ReactAssignment\\strudel_reactor\\src\\components\\CpmControl.jsx",
+              "RelativeDocumentMoniker": "src\\components\\CpmControl.jsx",
+              "ToolTip": "D:\\ReactAssignment\\strudel_reactor\\src\\components\\CpmControl.jsx",
+              "RelativeToolTip": "src\\components\\CpmControl.jsx",
+              "ViewState": "AgIAACsAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
+              "WhenOpened": "2025-11-18T05:28:30.131Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "README.md",
+              "DocumentMoniker": "D:\\ReactAssignment\\strudel_reactor\\README.md",
+              "RelativeDocumentMoniker": "README.md",
+              "ToolTip": "D:\\ReactAssignment\\strudel_reactor\\README.md",
+              "RelativeToolTip": "README.md",
+              "ViewState": "AgIAAGYAAAAAAAAAAAAAAHAAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2025-11-18T01:51:50.307Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "App.js",
+              "DocumentMoniker": "D:\\ReactAssignment\\strudel_reactor\\src\\App.js",
+              "RelativeDocumentMoniker": "src\\App.js",
+              "ToolTip": "D:\\ReactAssignment\\strudel_reactor\\src\\App.js",
+              "RelativeToolTip": "src\\App.js",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-11-18T01:51:23.929Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }

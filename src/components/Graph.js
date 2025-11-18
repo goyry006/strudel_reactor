@@ -3,15 +3,16 @@ import { select, scaleLinear, line, axisBottom, axisLeft, curveMonotoneX, max, t
 
 export default function Graph() {
 
-    const svgRef = useRef(null);
+    const svgRef = useRef(null); // Reference to the SVG element
     const [data, setData] = useState([]);
 
-    
+
+    // === Handle incoming Strudel note data ===
     useEffect(() => {
 
         const handleD3Event = (event) => {
 
-            const raw = event.detail || [];
+            const raw = event.detail || []; // Retrieve event details
 
             const parsed = raw
                 .map((entry) => {
@@ -19,16 +20,19 @@ export default function Graph() {
                     return match ? parseFloat(match[1]) : null;
                 })
                 .filter((v) => v !== null);
-            setData(parsed);
+
+            setData(parsed);   // Update data state for visualization
 
         };
 
+        // Listen for custom Strudel "d3Data" events
         document.addEventListener("d3Data", handleD3Event);
-        return () => document.removeEventListener("d3Data", handleD3Event);
+
+        return () => document.removeEventListener("d3Data", handleD3Event); // Cleanup listener
 
     }, []);
 
-
+    // === Render D3 Graph whenever data updates ===
     useEffect(() => {
 
         const svg = select(svgRef.current);
@@ -51,6 +55,7 @@ export default function Graph() {
 
         svg.selectAll("*").remove();
 
+        // Display placeholder text until Strudel sends data
         if (data.length === 0)
         {
             svg
@@ -63,7 +68,7 @@ export default function Graph() {
             return;
         }
 
-
+        // Scales for X (time) and Y (note pitch)
         const x = scaleLinear()
             .domain([0, data.length - 1])
             .range([margin.left, width - margin.right]);
@@ -124,6 +129,8 @@ export default function Graph() {
             .y((d) => y(d))
             .curve(curveMonotoneX);
 
+
+        // Draw line path with gradient and glow
         svg
             .append("path")
             .datum(data)
@@ -183,7 +190,7 @@ export default function Graph() {
 
     }, [data]);
 
-
+    // SVG container
     return (
         <div className="graph-wrapper">
             <svg ref={svgRef}></svg>

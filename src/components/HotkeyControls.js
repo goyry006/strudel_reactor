@@ -2,14 +2,16 @@
 
 function HotkeyControls({ setChecks, setVolume, onPlay, onStop }) {
 
-    const [lastKey, setLastKey] = useState("");
+    const [lastKey, setLastKey] = useState(""); // Track the last key pressed for UI display
 
     useEffect(() => {
 
+        // Handles all keyboard shortcuts
         const handleKey = (e) => {
 
             const key = e.key.toLowerCase();
-            setLastKey(key);
+
+            setLastKey(key); // Update UI display for last pressed key
 
             switch (key)
             {
@@ -34,11 +36,11 @@ function HotkeyControls({ setChecks, setVolume, onPlay, onStop }) {
                     break;
 
                 case "p":
-                    onPlay();
+                    onPlay(); // Trigger playback
                     break;
 
                 case "s":
-                    onStop();
+                    onStop(); // Stop playback
                     break;
 
                 default:
@@ -47,12 +49,14 @@ function HotkeyControls({ setChecks, setVolume, onPlay, onStop }) {
             }
         };
 
-        window.addEventListener("keydown", handleKey);
+        window.addEventListener("keydown", handleKey); // Add key listener on mount and clean up on unmount
         return () => window.removeEventListener("keydown", handleKey);
 
     }, [setChecks, setVolume, onPlay, onStop]);
 
     return (
+
+        // Fixed bar showing hotkey instructions and last pressed key
         <div className="hotkey-bar">
             <div className="hotkey-inner">
                 <span className="hotkey-title">🎧 Hotkeys:</span>
