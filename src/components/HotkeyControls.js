@@ -14,23 +14,23 @@ function HotkeyControls({ setChecks, setVolume, onPlay, onStop }) {
             switch (key)
             {
                 case "1":
-                    setChecks(prev => ({ ...prev, c1: !prev.c1 }));
+                    setChecks(prev => ({ ...prev, c1: !prev.c1 }));  /*checking the s1*/
                     break;
 
                 case "2":
-                    setChecks(prev => ({ ...prev, c2: !prev.c2 }));
+                    setChecks(prev => ({ ...prev, c2: !prev.c2 })); /*checking the d1*/
                     break;
 
                 case "3":
-                    setChecks({ c1: false, c2: false });
+                    setChecks({ c1: false, c2: false }); /*unchecking both d1 & s1*/
                     break;
 
                 case "v":
-                    setVolume((v) => Math.max(0, v - 0.1));
+                    setVolume((v) => Math.max(0, v - 0.1)); /*volume -ve*/
                     break;
 
                 case "b":
-                    setVolume((v) => Math.min(1, v + 0.1));
+                    setVolume((v) => Math.min(1, v + 0.1)); /*volume +ve*/
                     break;
 
                 case "p":
