@@ -11,7 +11,7 @@ The interface has been designed to replicate the experience of a lightweight dig
 ## Control Descriptions
 
 
-1. **Preprocess:**
+1. **Preprocess:** 
    
     Prepares the user’s Strudel code by converting placeholders such as <tempoLine> and <s1> into valid syntax before playback. This step ensures that user adjustments to tempo, rhythm layers, and volume are reflected in the processed output.
 
@@ -128,7 +128,7 @@ The interface has been designed to replicate the experience of a lightweight dig
 
 ## **Quirks and Usage Guidelines**
 
-1. Audio will only start after the user’s first click due to browser security policies.
+1. Audio will only start after few seconds the user’s first click to the proc and play or jst play , patiently wait until the graph starts appears.
 
 2. Changes to CPM, volume, or effect selections automatically trigger re-rendering.
 
@@ -140,8 +140,9 @@ The interface has been designed to replicate the experience of a lightweight dig
 
 ## **Demonstration Video**
 
-
-
+[🎥 Watch the STRUDel Demo on YouTube](https://youtu.be/ypw1xvHAL88)
+   
+   I have added the recorded video into the zipped file as well.
 
 ## **Bonus Points and Evidence**
 
